@@ -21,9 +21,9 @@ Thumbs.db
 # Logs
 *.log
 
-# Environment variables (if you use them later)
+# Environment variables
 .env
 
-# Coverage reports (optional)
+# Coverage reports
 htmlcov/
 .coverage
