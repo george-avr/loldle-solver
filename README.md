@@ -111,9 +111,10 @@ Handles multiple property types:
    * Simulate all feedback outcomes
    * Compute probability of each outcome
    * Calculate entropy
-3. Select the guess with **maximum entropy**
-4. Filter candidates based on actual feedback
-5. Repeat until solution is found
+3. Prompt the user for a guess
+4. Prompt the user for the feedback they received
+5. Filter candidates based on the guess and feedback
+6. Repeat until solution is found
 
 
 ---
