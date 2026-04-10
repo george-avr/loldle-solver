@@ -98,7 +98,7 @@ Handles multiple property types:
 │   ├── engine/                 # Core solving logic
 │   ├── metrics/                # Module for independent analysis
 │   ├── plots/                  # Visualization utilities
-│   ├── ui/                     # UI utilities for main.py
+│   ├── ui/                     # UI utilities for cli.py
 │   └── utils/                  # Helper functions
 ```
 
