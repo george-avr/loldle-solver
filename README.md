@@ -40,7 +40,7 @@ The optimal guess is the one that:
 
 > Maximizes uncertainty reduction across all possible outcomes
 
-The solver suggests guesses based on **entropy** initially, after that by smallest **expected remaining candidates**.
+The solver suggests guesses based on **entropy** initially, after that by smallest **expected remaining candidates** value.
 
 ### Entropy Definition
 
