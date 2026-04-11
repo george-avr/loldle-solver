@@ -103,16 +103,16 @@ Handles multiple property types:
 ├── resources/         # Data storage & images
 ├── results/           # Plots & CSV results
 │
-├── solver/
-│   ├── __main__.py             # Run the interactive solver
-│   ├── cli.py                  # Interactive solver (CLI)
-│   ├── loldle_analysis.ipynb   # Exploratory + theoretical analysis
-│   ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
-│   ├── engine/                 # Core solving logic
-│   ├── metrics/                # Module for independent analysis
-│   ├── plots/                  # Visualization utilities
-│   ├── ui/                     # UI utilities for cli.py
-│   └── utils/                  # Helper functions
+└── solver/
+    ├── __main__.py             # Run the interactive solver
+    ├── cli.py                  # Interactive solver (CLI)
+    ├── loldle_analysis.ipynb   # Exploratory + theoretical analysis
+    ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
+    ├── engine/                 # Core solving logic
+    ├── metrics/                # Module for independent analysis
+    ├── plots/                  # Visualization utilities
+    ├── ui/                     # UI utilities for cli.py
+    └── utils/                  # Helper functions
 ```
 
 ---
