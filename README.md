@@ -121,7 +121,7 @@ Handles multiple property types:
 3. Prompt the user for a guess
 4. Prompt the user for the feedback they received
 5. Filter candidates based on the guess and feedback
-6. Repeat until solution is found
+6. Repeat until the hidden champion is found
 
 
 ---
