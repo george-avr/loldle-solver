@@ -8,9 +8,9 @@ The goal is to transform the game from a trial-and-error process into a **system
 
 The project includes:
 
-* A full analytical notebook (`solver\loldle_analysis.ipynb`) exploring entropy and feature distributions
+* A full analytical notebook (`solver/loldle_analysis.ipynb`) exploring entropy and feature distributions
 * A modular solver engine
-* An **interactive CLI solver (`solver\cli.py`)** that guides the user step-by-step with optimal guesses
+* An **interactive CLI solver (`solver/cli.py`)** that guides the user step-by-step with optimal guesses
 
 ---
 
