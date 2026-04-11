@@ -70,9 +70,9 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 Handles multiple property types:
 
-* Scalar (e.g. gender, region)
+* Scalar (e.g. gender, resource, release year)
 * Categorical
-* Set-based (e.g. roles, traits with overlap)
+* Set-based (e.g. positions, species, regions)
 
 ### Informative Jupyter Notebook
 
