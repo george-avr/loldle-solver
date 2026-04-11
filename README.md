@@ -14,6 +14,12 @@ The project includes:
 
 ---
 
+## Demo
+
+![Cool Animation](resources/loldle_solver_information_theory_python2.gif)
+
+---
+
 ## What is LoLdle?
 **LoLdle** is a guessing game, similar to other popular online guessing games such as **Wordle**, where a randomly selected character (or champion) is chosen daily from the League of Legends video game. The goal for players is to find what the randomly selected hidden champion is, by taking a guess each time until the champion is found.
 
