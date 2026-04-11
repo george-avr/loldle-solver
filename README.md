@@ -39,7 +39,9 @@ We evaluate guesses using:
 The optimal guess is the one that:
 
 > Maximizes uncertainty reduction across all possible outcomes
-> 
+
+The solver suggests guess based on **Entropy** initially. After the first guess it sorts them by **Expected remaining candidates**.
+
 ### Entropy Definition
 
 We compute entropy over feedback partitions:
