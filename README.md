@@ -8,9 +8,9 @@ The goal is to transform the game from a trial-and-error process into a **system
 
 The project includes:
 
-* A full analytical notebook (`solver\loldle_analysis.ipynb`) exploring entropy and feature distributions
+* A full analytical notebook (`solver/loldle_analysis.ipynb`) exploring entropy and feature distributions
 * A modular solver engine
-* An **interactive CLI solver (`solver\cli.py`)** that guides the user step-by-step with optimal guesses
+* An **interactive CLI solver (`solver/cli.py`)** that guides the user step-by-step with optimal guesses
 
 ---
 
@@ -23,7 +23,7 @@ The project includes:
 ## What is LoLdle?
 **LoLdle** is a guessing game, similar to other popular online guessing games such as **Wordle**, where a randomly selected character (or champion) is chosen daily from the League of Legends video game. The goal for players is to find what the randomly selected hidden champion is, by taking a guess each time until the champion is found.
 
-What makes this challenge interesting is that after each guess the player makes, there is a feedback loop that takes place after each guess. Where, us the players, get some hints as to what the hidden champion's properties might are.
+What makes this challenge interesting is that after each guess the player makes, there is a feedback loop that takes place after each guess. Where, us the players, get some hints as to what the hidden champion's properties might be.
 
 ---
 
@@ -76,9 +76,9 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 Handles multiple property types:
 
-* Scalar (e.g. gender, region)
+* Scalar (e.g. gender, resource, release year)
 * Categorical
-* Set-based (e.g. roles, traits with overlap)
+* Set-based (e.g. positions, species, regions)
 
 ### Informative Jupyter Notebook
 
@@ -127,7 +127,7 @@ Handles multiple property types:
 3. Prompt the user for a guess
 4. Prompt the user for the feedback they received
 5. Filter candidates based on the guess and feedback
-6. Repeat until solution is found
+6. Repeat until the hidden champion is found
 
 
 ---
