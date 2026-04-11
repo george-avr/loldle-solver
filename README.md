@@ -154,27 +154,6 @@ python -m solver
 
 ---
 
-## Example Workflow
-
-```
-Top 5 most informative guesses today:
-==================================================================
-Champion Name | Information (bits) | Expected Remaining Champions
-------------------------------------------------------------------
-1) Talon      | 6.2296973808094345 | 2.91812865497076
-2) Riven      | 6.153845738275009  | 3.2339181286549707
-...
-
-Enter your guess: Talon
-
-What indicator do you see for each property for Talon?
-Answer with:  'correct'  'incorrect'  'partial'  'higher'  'lower'
-------------------------------------------------------------------
-Gender: ...
-```
-
----
-
 ## Why This Project Matters
 
 This project demonstrates:
