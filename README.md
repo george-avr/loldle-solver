@@ -16,7 +16,7 @@ The project includes:
 
 ## Demo
 
-![Cool Animation](resources/loldle_solver_information_theory_python2.gif)
+![Cool Animation](resources/gif.gif)
 
 ---
 
