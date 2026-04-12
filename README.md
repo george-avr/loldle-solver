@@ -16,7 +16,7 @@ The project includes:
 
 ## Demo
 
-![Cool Animation](resources/gif.gif)
+![Cool Animation](resources/demo.gif)
 
 ---
 
