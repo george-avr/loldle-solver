@@ -106,8 +106,10 @@ Handles multiple property types:
 ├── results/           # Plots & CSV results
 │
 └── solver/
+    │
     ├── __main__.py             # Run the interactive solver
     ├── cli.py                  # Interactive solver (CLI)
+    │
     ├── loldle_analysis.ipynb   # Exploratory + theoretical analysis
     ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
     ├── engine/                 # Core solving logic
