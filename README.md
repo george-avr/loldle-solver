@@ -39,7 +39,9 @@ We evaluate guesses using:
 The optimal guess is the one that:
 
 > Maximizes uncertainty reduction across all possible outcomes
-> 
+
+The solver suggests guesses based on **entropy** initially, after that by smallest **expected remaining candidates** value.
+
 ### Entropy Definition
 
 We compute entropy over feedback partitions:
@@ -103,16 +105,16 @@ Handles multiple property types:
 ├── resources/         # Data storage & images
 ├── results/           # Plots & CSV results
 │
-├── solver/
-│   ├── __main__.py             # Run the interactive solver
-│   ├── cli.py                  # Interactive solver (CLI)
-│   ├── loldle_analysis.ipynb   # Exploratory + theoretical analysis
-│   ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
-│   ├── engine/                 # Core solving logic
-│   ├── metrics/                # Module for independent analysis
-│   ├── plots/                  # Visualization utilities
-│   ├── ui/                     # UI utilities for cli.py
-│   └── utils/                  # Helper functions
+└── solver/
+    ├── __main__.py             # Run the interactive solver
+    ├── cli.py                  # Interactive solver (CLI)
+    ├── loldle_analysis.ipynb   # Exploratory + theoretical analysis
+    ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
+    ├── engine/                 # Core solving logic
+    ├── metrics/                # Module for independent analysis
+    ├── plots/                  # Visualization utilities
+    ├── ui/                     # UI utilities for cli.py
+    └── utils/                  # Helper functions
 ```
 
 ---
@@ -151,27 +153,6 @@ python -m solver
 * Enter your guess in LoLdle
 * Input the feedback
 * The solver will suggest the best next guesses
-
----
-
-## Example Workflow
-
-```
-Top 5 most informative guesses today:
-==================================================================
-Champion Name | Information (bits) | Expected Remaining Champions
-------------------------------------------------------------------
-1) Talon      | 6.2296973808094345 | 2.91812865497076
-2) Riven      | 6.153845738275009  | 3.2339181286549707
-...
-
-Enter your guess: Talon
-
-What indicator do you see for each property for Talon?
-Answer with:  'correct'  'incorrect'  'partial'  'higher'  'lower'
-------------------------------------------------------------------
-Gender: ...
-```
 
 ---
 
