@@ -8,9 +8,9 @@ The goal is to transform the game from a trial-and-error process into a **system
 
 The project includes:
 
-* A full analytical notebook (`solver/loldle_analysis.ipynb`) exploring entropy and feature distributions
-* A modular solver engine
+* A full analytical notebook (`notebooks/loldle_analysis.ipynb`) exploring entropy and feature distributions
 * An **interactive CLI solver (`solver/cli.py`)** that guides the user step-by-step with optimal guesses
+* A modular solver engine
 
 ---
 
@@ -79,7 +79,6 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 Handles multiple property types:
 
 * Scalar (e.g. gender, resource, release year)
-* Categorical
 * Set-based (e.g. positions, species, regions)
 
 ### Informative Jupyter Notebook
