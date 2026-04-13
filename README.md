@@ -138,22 +138,46 @@ Handles multiple property types:
 
 ## Running the Solver
 
-### 1. Install dependencies
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/george-avr/loldle-solver
+cd loldle-solver
+```
+
+### 2. Create a virtual environment
+
+#### Linux / WSL / macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+#### Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the interactive solver
+### 4. Run the interactive solver
 
 ```bash
 python -m solver
 ```
+> Make sure you run this from the project root directory
 
-### 3. Follow prompts
+### 5. Follow prompts
 
 * Enter your guess in LoLdle
-* Input the feedback
+* Input the feedback provided by the game
 * The solver will suggest the best next guesses
 
 ---
