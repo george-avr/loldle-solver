@@ -31,8 +31,8 @@ def show_top_results(df: pd.DataFrame,
         df_sorted = df.sort_values(by=[remain_col, bits_col]).head(top)
         print(f"The next top {top} most informative guesses are:")
 
-    col_width = 30
-    name_width = col_width - 8
+    col_width = 25
+    name_width = col_width - 3
 
     _line("=")
     print(f"{'Champion Name':<{name_width}}| "
