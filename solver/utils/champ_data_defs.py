@@ -32,6 +32,7 @@ CHAMPION_ALIASES: dict[str, set[str]] = {
     "jarvan iv": {"j4"},
     "kassadin": {"kass", "kassa"},
     "katarina": {"kata", "kat"},
+    "kha'zix": {"k6"},
     "lissandra": {"liss"},
     "malphite": {"malph"},
     "malzahar": {"malz"},
