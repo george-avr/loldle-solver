@@ -338,7 +338,7 @@ def plot_range_type_distribution(
     plt.style.use(style)
 
     if ax is None:
-        fig, ax = plt.subplots(figsize=(18, 10))
+        fig, ax = plt.subplots(figsize=(3, 1))
         own_figure = True
     else:
         fig = ax.figure
@@ -415,9 +415,9 @@ def plot_resource_distribution(
     df = _filter_rows(df, top_k, bottom_k)
     df["resource"] = (
         df["resource"]
-        .astype(str)
-        .str.strip()
-        .str.title()
+            .astype(str)
+            .str.strip()
+            .str.title()
     )
 
     # -----------------------
@@ -440,7 +440,7 @@ def plot_resource_distribution(
     plt.style.use(style)
 
     if ax is None:
-        fig, ax = plt.subplots(figsize=(18, max(10, len(resource_counts) * 0.5)))
+        fig, ax = plt.subplots(figsize=(12, max(8, len(resource_counts) * 0.5)))
         own_figure = True
     else:
         fig = ax.figure
