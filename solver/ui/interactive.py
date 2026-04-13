@@ -98,7 +98,8 @@ def input_feedback(guess: Champion) -> FeedbackPattern:
                 pattern.append(valid_indicator)
                 indicator_flag = False
             else:
-                print(f"Invalid indicator {user_input!r}")
+                norm_property = prop_name.replace("_", " ").capitalize()
+                print(f'Invalid indicator {user_input!r} for "{norm_property}"')
 
     _line("=")
     return FeedbackPattern(*pattern)
