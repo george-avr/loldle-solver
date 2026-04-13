@@ -56,7 +56,7 @@ def _get_valid_indicator(
     available_indicators = PROPERTY_TO_INDICATORS_MAPPING.get(prop_name, ())
 
     for indicator in available_indicators:
-        if indicator.startswith(user_indicator):
+        if user_indicator and indicator.startswith(user_indicator):
             if isinstance(prop_val, frozenset) and indicator == "partial":
                 if len(prop_val) == 1:
                     indicator = Indicator.PARTIAL_SUBSET

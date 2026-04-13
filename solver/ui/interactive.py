@@ -42,10 +42,10 @@ def show_top_results(df: pd.DataFrame,
 
     for i, (name, row) in enumerate(df_sorted.iterrows(), start=1):
         name = f"{i}) {name}"
-        bits = row[bits_col]
-        remain = row[remain_col]
+        bits = round(row[bits_col], 3)
+        exp_remain = round(row[remain_col], 3)
 
-        print(f"{name:<{name_width}}| {bits:<{col_width}}| {remain}")
+        print(f"{name:<{name_width}}| {bits:<{col_width}}| {exp_remain}")
 
     _line("-")
 
@@ -101,7 +101,7 @@ def input_feedback(guess: Champion) -> FeedbackPattern:
                 print(f"Invalid indicator {user_input!r}")
 
     _line("=")
-    return tuple(pattern)
+    return FeedbackPattern(*pattern)
 
 
 def is_correct(feedback_pattern: FeedbackPattern) -> bool:
