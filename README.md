@@ -105,32 +105,18 @@ Handles multiple property types:
 ├── results/           # Plots & CSV results
 │
 ├── notebooks/
-│   └── loldle_analysis.ipynb   # Exploratory + theoretical analysis
+│   └── loldle_analysis.ipynb    # Exploratory + theoretical analysis
 │
 └── solver/
-<<<<<<< HEAD
+    ├── __main__.py              # Run the interactive solver
+    ├── cli.py                   # Interactive solver (CLI)
     │
-    ├── __main__.py               # Run the interactive solver
-    ├── cli.py                    # Interactive solver (CLI) used by __main__.py
-    ├── loldle_analysis.ipynb     # Exploratory + theoretical analysis
-    │
-    ├── champ_pipeline/           # Core ETL pipeline for gathering champion data
-    ├── engine/                   # Core solving logic
-    ├── metrics/                  # Module for independent analysis
-    ├── plots/                    # Visualization utilities
-    ├── ui/                       # UI utilities for cli.py
-    └── utils/                    # Helper functions
-=======
-    ├── __main__.py             # Run the interactive solver
-    ├── cli.py                  # Interactive solver (CLI)
-    │
-    ├── champ_pipeline/         # Core ETL pipeline for gathering champion data
-    ├── engine/                 # Core solving logic
-    ├── metrics/                # Module for independent analysis
-    ├── plots/                  # Visualization utilities
-    ├── ui/                     # UI utilities for cli.py
-    └── utils/                  # Helper functions
->>>>>>> 9da8683 (Changed README)
+    ├── champ_pipeline/          # Core ETL pipeline for gathering champion data
+    ├── engine/                  # Core solving logic
+    ├── metrics/                 # Module for independent analysis
+    ├── plots/                   # Visualization utilities
+    ├── ui/                      # UI utilities for cli.py
+    └── utils/                   # Helper functions
 ```
 
 ---
