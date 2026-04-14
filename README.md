@@ -111,12 +111,12 @@ Handles multiple property types:
     ├── __main__.py              # Run the interactive solver
     ├── cli.py                   # Interactive solver (CLI)
     │
-    ├── champ_pipeline/          # Core ETL pipeline for gathering champion data
+    ├── champ_pipeline/          # Core ETL pipeline for getting all champion data
     ├── engine/                  # Core solving logic
     ├── metrics/                 # Module for independent analysis
     ├── plots/                   # Visualization utilities
     ├── ui/                      # UI utilities for cli.py
-    └── utils/                   # Helper functions
+    └── utils/                   # Helpers
 ```
 
 ---
