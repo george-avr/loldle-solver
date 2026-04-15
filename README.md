@@ -198,6 +198,6 @@ It bridges theory and practice by turning a game into an **optimization problem*
 
 ## Author
 
-George Avramidis
+George A.
 
 ---
