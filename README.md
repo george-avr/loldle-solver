@@ -74,13 +74,6 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 * Solver recomputes best guesses in real time
 * Provides ranked suggestions for next guess
 
-### Feature Engineering
-
-Handles multiple property types:
-
-* Scalar (e.g. gender, resource, release year)
-* Set-based (e.g. positions, species, regions)
-
 ### Informative Jupyter Notebook
 
 * Exploratory analysis of data used by LoLdle
@@ -92,32 +85,6 @@ Handles multiple property types:
 * `solver.engine` → core logic
 * `solver.plots` → visualization tools
 * `cli.py` → interactive solver
-
----
-
-## Project Structure
-```
-.
-├── README.md
-├── requirements.txt
-│
-├── resources/         # Data storage & images
-├── results/           # Plots & CSV results
-│
-├── notebooks/
-│   └── loldle_analysis.ipynb    # Exploratory + theoretical analysis
-│
-└── solver/
-    ├── __main__.py              # Run the interactive solver
-    ├── cli.py                   # Interactive solver (CLI)
-    │
-    ├── champ_pipeline/          # Core ETL pipeline for getting all champion data
-    ├── engine/                  # Core solving logic
-    ├── metrics/                 # Module for independent analysis
-    ├── plots/                   # Visualization utilities
-    ├── ui/                      # UI utilities for cli.py
-    └── utils/                   # Helpers
-```
 
 ---
 
@@ -193,6 +160,32 @@ This project demonstrates:
 * Clean modular Python architecture
 
 It bridges theory and practice by turning a game into an **optimization problem**.
+
+---
+
+## Project Structure
+```
+.
+├── README.md
+├── requirements.txt
+│
+├── resources/         # Data storage & images
+├── results/           # Plots & CSV results
+│
+├── notebooks/
+│   └── loldle_analysis.ipynb    # Exploratory + theoretical analysis
+│
+└── solver/
+    ├── __main__.py              # Run the interactive solver
+    ├── cli.py                   # Interactive solver (CLI)
+    │
+    ├── champ_pipeline/          # Core ETL pipeline for getting all champion data
+    ├── engine/                  # Core solving logic
+    ├── metrics/                 # Module for independent analysis
+    ├── plots/                   # Visualization utilities
+    ├── ui/                      # UI utilities for cli.py
+    └── utils/                   # Helpers
+```
 
 ---
 
