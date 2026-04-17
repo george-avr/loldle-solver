@@ -22,9 +22,10 @@ The project includes:
 ---
 
 ## What is LoLdle?
-**LoLdle** is a guessing game, similar to other popular online guessing games such as **Wordle**, where a randomly selected character (or champion) is chosen daily from the League of Legends video game. The goal for players is to find what the randomly selected hidden champion is, by taking a guess each time until the champion is found.
+**LoLdle** is a daily guessing game inspired by Wordle and based on the video game League of Legends. Each day, a random champion from the game is selected, and players must guess who it is. 
+The goal is to find the correct champion in as few attempts as possible, with fewer guesses reflecting better performance.
 
-What makes this challenge interesting is that after each guess the player makes, there is a feedback loop that takes place after each guess. Where, us the players, get some hints as to what the hidden champion's properties might be.
+After each guess, the game provides feedback in the form of clues about the hidden champion’s characteristics, such as their role, region, resource type, release year, and other attributes. These hints help players narrow down the correct answer through deduction.
 
 ---
 
