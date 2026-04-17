@@ -7,6 +7,7 @@ base = Path(__file__).resolve().parents[2]
 
 resources = base / "resources"
 results = base / "results"
+results_plots = results / "plots"
 
 champion_data = resources / "champions.json"
-rankings = results / "dataset.csv"
+loldle_dataset = results / "loldle_dataset.csv"

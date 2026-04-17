@@ -20,7 +20,7 @@ from solver.plots._plot_utils import (
 def plot_release_year_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_release_year_distribution.png",
         ax=None,
         show=True,
@@ -172,7 +172,7 @@ def plot_release_year_distribution(
 def plot_region_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_region_distribution.png",
         ax=None,
         show=True,
@@ -285,7 +285,7 @@ def plot_region_distribution(
 def plot_range_type_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_range_type_distribution.png",
         ax=None,
         show=True,
@@ -396,7 +396,7 @@ def plot_range_type_distribution(
 def plot_resource_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_resource_distribution.png",
         ax=None,
         show=True,
@@ -500,7 +500,7 @@ def plot_resource_distribution(
 def plot_species_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_champion_species_distribution.png",
         ax=None,
         show=True,
@@ -620,7 +620,7 @@ def plot_species_distribution(
 def plot_gender_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_champion_gender_distribution.png",
         ax=None,
         show=True,
@@ -713,7 +713,7 @@ def plot_gender_distribution(
 def plot_position_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_champion_position_distribution.png",
         ax=None,
         save=False,

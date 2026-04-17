@@ -24,7 +24,7 @@ from solver.plots._plot_utils import (
 
 
 def plot_best_worst(best: pd.DataFrame, worst: pd.DataFrame, *, save_path=None) -> None:
-    background = paths.resources / "plots_background_image.jpg"
+    background = paths.results_plots / "plots_background_image.jpg"
     img = mpimg.imread(background)
 
     fig, axes = plt.subplots(2, 1, figsize=(19.2, 10.8), sharex=True)
@@ -80,7 +80,7 @@ def plot_best_worst(best: pd.DataFrame, worst: pd.DataFrame, *, save_path=None) 
 def plot_entropy_distribution(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_entropy_distribution.png",
         show=True,
         save=False,
@@ -139,7 +139,7 @@ def plot_entropy_distribution(
 def plot_entropy_vs_remaining(
         df: pd.DataFrame,
         *,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_entropy_vs_remaining_scatter.png",
         show=True,
         save=False,
@@ -205,8 +205,8 @@ def plot_entropy_vs_remaining(
 
 
 def plot_release_timeline_entropy(
-        csv_path=paths.rankings,
-        output_path=paths.results,
+        csv_path=paths.loldle_dataset,
+        output_path=paths.results_plots,
         filename="loldle_champion_release_timeline_entropy_midpoint.png",
         show=True
 ):
@@ -338,7 +338,7 @@ def plot_release_timeline_entropy(
 
 def plot_region_overlap_heatmap(
         df: pd.DataFrame,
-        output_path=paths.results,
+        output_path=paths.results_plots,
         filename="loldle_region_overlap_heatmap.png",
         show=True,
 ):
