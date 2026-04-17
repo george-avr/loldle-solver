@@ -47,6 +47,7 @@ CHAMPION_ALIASES: dict[str, set[str]] = {
     "sejuani": {"sej"},
     "seraphine": {"sera"},
     "shyvana": {"shyv"},
+    "soraka": {"raka"},
     "tristana": {"trist"},
     "tryndamere": {"trynd", "trynda"},
     "vladimir": {"vlad"},
