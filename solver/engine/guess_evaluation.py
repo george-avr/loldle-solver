@@ -3,7 +3,7 @@ Simulation and evaluation utilities for Loldle guess strategies.
 
 This module provides the champion data logic for comparing champions,
 generating feedback patterns, filtering candidate targets, and evaluating
-guesses using information-theoretic metrics such as Shannon entropy and
+guesses using information-theoretic dataset such as Shannon entropy and
 expected remaining candidates.
 
 It is primarily used by the engine to rank guesses and narrow down the

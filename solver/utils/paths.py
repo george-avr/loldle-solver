@@ -9,4 +9,4 @@ resources = base / "resources"
 results = base / "results"
 
 champion_data = resources / "champions.json"
-rankings = results / "guess_rankings.csv"
+rankings = results / "dataset.csv"

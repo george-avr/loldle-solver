@@ -1,7 +1,8 @@
 """
 Module for LoLdle analysis.
 
-Users may work with the loldle_df below.
+Users may run this to create a dataset (CSV) with the most
+recent LoLdle properties and work with the loldle_df (DataFrame) below.
 """
 from pathlib import Path
 import json
@@ -9,7 +10,7 @@ import json
 import pandas as pd
 
 from solver.utils import paths
-from solver.champ_pipeline.loader import load_champions
+from solver.champ_pipeline.loader import load_champions, create_champions_json
 from solver.champ_pipeline.champions import Champion
 from solver.engine.guess_evaluation import (
     compute_metrics,
@@ -17,15 +18,19 @@ from solver.engine.guess_evaluation import (
 )
 
 def create_csv_metrics(load: Path, output: Path) -> None:
+    """
+    Fetch the most recent LoLdle properties and write the metrics to a CSV file
+    and store it in the results directory.
+    """
     # ----------------------------
     # Load data
     # ----------------------------
+    create_champions_json(paths.resources / "champions.json", overwrite=True)
     champions = load_champions(load)
     guess_ids = {champ.name: i for i, champ in enumerate(champions)}
-    champ_map = {champ.name: champ for champ in champions}
 
     # ----------------------------
-    # Compute metrics
+    # Compute dataset
     # ----------------------------
     pattern_id_matrix = compute_pattern_id_matrix(
         guesses=champions,
@@ -43,7 +48,6 @@ def create_csv_metrics(load: Path, output: Path) -> None:
     df["rank"] = df["entropy"].rank(ascending=False, method="first").astype(int)
 
     props = list(Champion.properties())
-
     champ_map = {champ.name: champ for champ in champions}
 
     for prop in props:
@@ -72,7 +76,7 @@ def _serialize_value(v):
 
 
 if __name__ == "__main__":
-    output_path = paths.results / "guess_rankings.csv"
+    output_path = paths.results / "loldle_dataset.csv"
     create_csv_metrics(load=paths.champion_data, output=output_path)
 
     loldle_df = pd.read_csv(output_path)
