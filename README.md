@@ -22,7 +22,7 @@ The project includes:
 ---
 
 ## What is LoLdle?
-**LoLdle** is a daily guessing game inspired by Wordle and based on the video game League of Legends. Each day, a random champion from the game is selected, and players must guess who it is. 
+**LoLdle** is a daily guessing game inspired by **Wordle** and based on the video game League of Legends. Each day, a random champion from the game is selected, and players must guess who it is. 
 The goal is to find the correct champion in as few attempts as possible, with fewer guesses reflecting better performance.
 
 After each guess, the game provides feedback in the form of clues about the hidden champion’s characteristics, such as their role, region, resource type, release year, and other attributes. These hints help players narrow down the correct answer through deduction.
