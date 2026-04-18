@@ -8,9 +8,9 @@ The goal is to transform the game from a trial-and-error process into a **system
 
 The project includes:
 
-* A full analytical notebook (`notebooks/loldle_analysis.ipynb`) exploring entropy and feature distributions
+* A **full analytical notebook (`notebooks/loldle_analysis.ipynb`)** exploring entropy and feature distributions
 * An **interactive CLI solver (`solver/cli.py`)** that guides the user step-by-step with optimal guesses
-* A LoLdle dataset builder (`dataset/loldle_dataset_builder.py`) that fetches current champion data and computes entropy-based guess metrics, exported as a CSV in the `results` folder.
+* A **LoLdle dataset builder (`dataset/loldle_dataset_builder.py`)** that creates a CSV in the **`results`** folder.
 * A modular solver engine
 
 ---
