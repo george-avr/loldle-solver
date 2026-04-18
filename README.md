@@ -107,6 +107,16 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 ## Running the Solver
 
+### 0. Prerequisites
+
+* Python 3.11 or newer
+
+Check your version:
+
+```bash
+python3 --version
+```
+
 ### 1. Clone the repository
 
 ```bash
@@ -116,7 +126,7 @@ cd loldle-solver
 
 ### 2. Create a virtual environment
 
-#### Linux / WSL / macOS:
+#### Linux / macOS:
 
 ```bash
 python3 -m venv .venv
@@ -146,8 +156,8 @@ python -m solver
 ### 5. Follow prompts
 
 * Enter your guess in LoLdle
-* Input the feedback provided by the game
-* The solver will suggest the best next guesses
+* Input the feedback exactly as shown in the game
+* The solver will suggest optimal next guesses
 
 ---
 
