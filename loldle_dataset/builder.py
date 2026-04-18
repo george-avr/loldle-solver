@@ -1,8 +1,8 @@
 """
 Module for LoLdle analysis.
 
-Users may run this to create a dataset (CSV) with the most
-recent LoLdle properties and work with the loldle_df (DataFrame) below.
+Users may run this to create a loldle_dataset (CSV) with the most
+recent LoLdle properties and work with the loldle_df (Pandas DataFrame) below.
 """
 from pathlib import Path
 import json
@@ -30,7 +30,7 @@ def create_csv_metrics(load: Path, output: Path) -> None:
     guess_ids = {champ.name: i for i, champ in enumerate(champions)}
 
     # ----------------------------
-    # Compute dataset
+    # Compute loldle_dataset
     # ----------------------------
     pattern_id_matrix = compute_pattern_id_matrix(
         guesses=champions,
