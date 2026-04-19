@@ -129,7 +129,7 @@ cd loldle-solver
 python -m venv .venv
 ```
 
-### 3. Activate virtual environment:
+### 3. Activate virtual environment
 
 #### Linux / macOS:
 
