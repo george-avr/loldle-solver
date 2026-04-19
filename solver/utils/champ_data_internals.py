@@ -65,7 +65,7 @@ def parse_champion_data(
     provided JavaScript source, converts JSON-like string fields into Python
     objects, and normalizes primitive values (e.g., casting `release_year` to int).
 
-    The resulting loldle_dataset is then validated against the expected total number
+    The resulting dataset is then validated against the expected total number
     of champions to ensure completeness and integrity of the champion roster.
 
     Args:

@@ -1,7 +1,7 @@
 """
 Module for LoLdle analysis.
 
-Users may run this to create a loldle_dataset (CSV) with the most
+Users may run this to create a dataset (CSV) with the most
 recent LoLdle properties and work with the loldle_df (Pandas DataFrame) below.
 """
 from pathlib import Path
@@ -20,7 +20,7 @@ from solver.engine.guess_evaluation import (
 def create_csv_metrics(load: Path, output: Path) -> None:
     """
     Fetch the most recent LoLdle properties and write the metrics to a CSV file
-    and store it in the results directory.
+    and store it in the `results` directory.
     """
     # ----------------------------
     # Load data
@@ -30,7 +30,7 @@ def create_csv_metrics(load: Path, output: Path) -> None:
     guess_ids = {champ.name: i for i, champ in enumerate(champions)}
 
     # ----------------------------
-    # Compute loldle_dataset
+    # Compute dataset
     # ----------------------------
     pattern_id_matrix = compute_pattern_id_matrix(
         guesses=champions,
