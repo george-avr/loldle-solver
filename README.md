@@ -10,7 +10,7 @@ The project includes:
 
 * A **full analytical notebook (`notebooks/loldle_analysis.ipynb`)** exploring entropy and feature distributions
 * An **interactive CLI solver (`solver/cli.py`)** that guides the user step-by-step with optimal guesses
-* A **CSV builder (`dataset/builder.py`)** that creates an *up-to-date* **LoLdle** dataset in the **`results`** folder.
+* A **CSV builder (`dataset/builder.py`)** that creates an *up-to-date* **LoLdle dataset** in the **`results/`** folder.
 * A modular solver engine
 
 ---
