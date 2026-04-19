@@ -112,14 +112,6 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 Check your version:
 
-#### Linux / macOS:
-
-```bash
-python3 --version
-```
-
-#### Windows:
-
 ```bash
 python --version
 ```
@@ -133,27 +125,31 @@ cd loldle-solver
 
 ### 2. Create a virtual environment
 
+```bash
+python -m venv .venv
+```
+
+### 3. Activate virtual environment:
+
 #### Linux / macOS:
 
 ```bash
-python3 -m venv .venv
 source .venv/bin/activate
 ```
 
 #### Windows:
 
 ```bash
-python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the interactive solver
+### 5. Run the interactive solver
 
 ```bash
 python -m solver
