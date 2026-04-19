@@ -79,13 +79,13 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 * Exploratory analysis of data used by LoLdle
 * Plots of distributions
-* Code & internal logic used for the solver 
+* Code & internal logic used for the solver
 
-### Modular Codebase
+### LoLdle Dataset Builder
 
-* `solver.engine` → core logic
-* `solver.plots` → visualization tools
-* `cli.py` → interactive solver
+* Automatically generate the *up-to-date* dataset used by LoLdle
+* Includes all properties of all champions (gender, positions, species, etc.)
+* Includes guess rankings for champions (entropy, expected remaining champions)
 
 ---
 
@@ -112,8 +112,16 @@ where each $x$ corresponds to a unique feedback pattern induced by a guess.
 
 Check your version:
 
+#### Linux / macOS:
+
 ```bash
 python3 --version
+```
+
+#### Windows:
+
+```bash
+python --version
 ```
 
 ### 1. Clone the repository
