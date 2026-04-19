@@ -156,7 +156,7 @@ python -m solver
 ```
 > Make sure you run this from the project root directory
 
-### 5. Follow prompts
+### 6. Follow prompts
 
 * Enter your guess in LoLdle
 * Input the feedback exactly as shown in the game
