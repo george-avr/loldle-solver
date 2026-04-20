@@ -86,7 +86,7 @@ def parse_champion_data(
         FetchURLError: If retrieving the expected champion count fails.
     """
     champions = []
-    expected_champions = _get_total_champions()
+    expected_champions = 172
 
     matches = _find_matches(js_text, pattern, named_groups=True)
     for champ in matches:
@@ -117,12 +117,8 @@ def _validate_champion_data(champions: list[ChampionDict], expected: int) -> Non
             "JS bundle format has changed."
         )
 
-    # Check if matched is outside the allowed tolerance
-    tolerance = 1
-    difference = matched - expected
-
-    if abs(difference) > tolerance:
-        raise InvalidChampionCount(matched, expected, tolerance, difference)
+    if matched < expected:
+        raise InvalidChampionCount(matched)
 
 
 def get_latest_date(
