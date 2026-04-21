@@ -14,8 +14,6 @@ from solver.ui.interactive import (
 
 
 def main():
-    welcome_user()
-
     data_path = paths.champion_data
 
     create_champions_json(data_path)
@@ -28,6 +26,8 @@ def main():
     attempts = 0
 
     first_guess = True
+
+    welcome_user()
 
     while True:
         attempts += 1

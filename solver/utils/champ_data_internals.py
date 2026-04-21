@@ -13,7 +13,7 @@ All functions are intended for internal use.
 import re
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
-from typing import Sequence, Literal, overload
+from typing import Sequence, Literal
 from pathlib import Path
 from datetime import date
 from re import finditer
@@ -86,29 +86,28 @@ def parse_champion_data(
         FetchURLError: If retrieving the expected champion count fails.
     """
     champions = []
-    expected_champions = 172
 
-    matches = _find_matches(js_text, pattern, named_groups=True)
+    matches = _find_dict_matches(js_text, pattern)
     for champ in matches:
         for field in list_fields:
             champ[field] = json.loads(champ[field])
         champ["release_date"] = int(champ["release_date"])
         champions.append(champ)
 
-    _validate_champion_data(champions, expected_champions)
-    return champions
+    return _validated_champion_data(champions)
 
 
-def _validate_champion_data(champions: list[ChampionDict], expected: int) -> None:
+def _validated_champion_data(champions: list[ChampionDict]) -> list[ChampionDict]:
     """
     Validate that all champions were parsed successfully.
 
     The total number of expected champions is considered within an
     allowed tolerance of ±1. This accounts for the possibility that
     a new champion has been added to the game but has not yet been
-    updated in Loldle’s roster or in the source used to compute the total.
+    updated in Loldle's roster or in the source used to compute the total.
     """
     matched = len(champions)
+    expected = _get_total_champion_count()
 
     if matched == 0:
         raise MinifiedJSBundleNotFoundError(
@@ -117,8 +116,13 @@ def _validate_champion_data(champions: list[ChampionDict], expected: int) -> Non
             "JS bundle format has changed."
         )
 
-    if matched < expected:
-        raise InvalidChampionCount(matched)
+    # Check if 'matched' is outside the allowed tolerance
+    tolerance = 1
+    difference = matched - expected
+
+    if abs(difference) > tolerance and (172 <= matched <= 200) and (172 <= expected <= 200):
+        raise InvalidChampionCount(matched, expected, tolerance, difference)
+    return champions
 
 
 def get_latest_date(
@@ -131,7 +135,7 @@ def get_latest_date(
     Use a regex pattern to find all dates from `url` in DD/MM/YYYY
     format and return the most recent one.
     """
-    date_matches = _find_matches(js_text, date_pattern)
+    date_matches = _find_str_matches(js_text, date_pattern)
     dates = [date.strptime(d, "%d/%m/%Y") for d in date_matches]
 
     if not dates:
@@ -198,7 +202,7 @@ def find_minified_jsbundle_urls(
         - The returned URLs are absolute (homepage URL + relative path).
     """
     text = fetch_url_text(loldle_homepage)
-    js_matches = _find_matches(text, pattern)
+    js_matches = _find_str_matches(text, pattern)
     urls = [loldle_homepage + match for match in js_matches]
 
     if not urls:
@@ -249,9 +253,9 @@ def find_data_from_loldle(matched_urls: list[str]) -> tuple[list[ChampionDict], 
     raise last_error
 
 
-def _get_total_champions(
-        url=URLs.LEAGUE_OF_GRAPHS,
-        pattern=RegexPatterns.LEAGUE_OF_GRAPHS_CHAMPION
+def _get_total_champion_count(
+        url=URLs.LOL_CHAMPIONS,
+        pattern=RegexPatterns.LOL_CHAMPION_MATCH
 ) -> int:
     """
     Retrieve the current total number of champions in League of Legends as an int.
@@ -263,7 +267,7 @@ def _get_total_champions(
     It returns the total number of champions detected.
     """
     text = fetch_url_text(url)
-    matches = _find_matches(text, pattern)
+    matches = _find_str_matches(text, pattern)
     return sum(1 for _ in matches)
 
 
@@ -277,20 +281,7 @@ def is_recent(date_str: str, *, days: int = 30) -> bool:
         return False
 
 
-# Overloaded function signatures for _find_matches():
-# Depending on the `named_groups` argument (a boolean literal),
-# the return type changes:
-# - If named_groups=True, yields dicts of named regex groups.
-# - If named_groups=False (default), yields full match strings.
-# These overloads help static type checkers understand the correct return type
-# without needing 2 different functions
-
-@overload
-def _find_matches(text: str, pattern, named_groups: Literal[True]) -> RegexMatchDict: ...
-@overload
-def _find_matches(text: str, pattern, named_groups: Literal[False] = False) -> RegexMatchStr: ...
-
-def _find_matches(text: str, pattern, named_groups=False):
+def _find_str_matches(text: str, pattern) -> RegexMatchStr:
     """
     Find all matches of a regex pattern in a string.
 
@@ -299,15 +290,31 @@ def _find_matches(text: str, pattern, named_groups=False):
             The string to search.
         pattern (re.Pattern):
             Compiled regular expression pattern.
-        named_groups (bool):
-            If True, yield dictionaries of named groups; else yield the full match strings.
 
     Yields:
-        str or dict[str, str]
-            Either the matched string or a dictionary of named groups.
+        str
+            Matched string.
     """
     for match in finditer(pattern, text):
-        yield match.groupdict() if named_groups else match.group()
+        yield match.group()
+
+
+def _find_dict_matches(text: str, pattern) -> RegexMatchDict:
+    """
+    Find all matches of a regex pattern in a string.
+
+    Args:
+        text (str):
+            The string to search.
+        pattern (re.Pattern):
+            Compiled regular expression pattern.
+
+    Yields:
+        dict[str, str]
+            Matched dictionary of named groups.
+    """
+    for match in finditer(pattern, text):
+        yield match.groupdict()
 
 
 def norm_property(p: str) -> str:

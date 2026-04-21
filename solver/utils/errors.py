@@ -56,9 +56,18 @@ class InvalidChampionCount(LoldleError):
     from a minified JS bundle with regex pattern matching.
     """
 
-    def __init__(self, matched: int):
+    def __init__(self, matched: int, expected: int, tolerance: int, difference: int):
         self.matched = matched
+        self.expected = expected
+        self.tolerance = tolerance
+        self.difference = difference
+
+        if difference > 0:
+            reason = "Too many champions matched (regex likely too broad)"
+        else:
+            reason = "Too few champions matched (regex likely outdated)"
 
         super().__init__(
-            f"Champion count mismatch: got {matched}"
+            f"Champion count mismatch: got {matched}, expected ~{expected} "
+            f"(tolerance ±{tolerance}).\n{reason}."
         )

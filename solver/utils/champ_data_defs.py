@@ -87,7 +87,7 @@ LIST_FIELDS: Iterable[str] = (
 
 class URLs:
     LOLDLE_HOMEPAGE = "https://loldle.net/"
-    LEAGUE_OF_GRAPHS = "https://www.leagueofgraphs.com/champions/winrates-by-xp"
+    LOL_CHAMPIONS = "https://www.leagueoflegends.com/en-us/champions/"
 
 
 class HTTPHeaders:
@@ -120,6 +120,6 @@ class RegexPatterns:
         """,
         re.VERBOSE,
     )
-    LEAGUE_OF_GRAPHS_CHAMPION = re.compile(r"<a href=\"/champions/builds/")
+    LOL_CHAMPION_MATCH = re.compile(r'<a role="button" aria-label="[^"]+"')
     DATE = re.compile(r"\d{2}[-/]\d{2}[-/]\d{4}")
     MINIFIED_JS_BUNDLE = re.compile(r"(?:js)?/(?:index|chunk)[^\"]+\.js")
