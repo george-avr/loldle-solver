@@ -42,8 +42,8 @@ def show_top_results(df: pd.DataFrame,
 
     for i, (name, row) in enumerate(df_sorted.iterrows(), start=1):
         name = f"{i}) {name}"
-        bits = round(row[bits_col], 3)
-        exp_remain = round(row[remain_col], 3)
+        bits = round(row[bits_col], 4)
+        exp_remain = round(row[remain_col], 1)
 
         print(f"{name:<{name_width}}| {bits:<{col_width}}| {exp_remain}")
 
