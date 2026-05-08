@@ -50,7 +50,18 @@ def main():
             print("Good guess!")
             break
 
+        previous_candidates = candidates
         candidates = filter_candidates(candidates, user_champion_guess, feedback_pattern)
+
+        while not candidates:
+            print(f"Invalid feedback! There are no champions that match "
+                  f"your pattern for {user_champion_guess}. Please try again.")
+
+            user_champion_guess = input_champion(from_choices=all_champions)
+            feedback_pattern = input_feedback(guess=user_champion_guess)
+
+            candidates = filter_candidates(previous_candidates, user_champion_guess, feedback_pattern)
+
         show_remaining_champions(candidates)
 
         if one_remaining(candidates):
